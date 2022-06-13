@@ -54,7 +54,26 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
+  {
+    path: '/devtools',
+    component: Layout,
+    redirect: '/devtools/fileinfo',
+    name: 'devtools',
+    meta: {title: '研发工具', icon: 'el-icon-s-help'},
+    children: [
+      {
+        path: 'fileinfo',
+        name: 'fileinfo',
+        component: () => import('@/views/devtools/index'),
+        meta: {
+          title: '文件信息',
+          icon: 'form'
+        }
+      }
+    ]
+  },
 
+  // 例子
   {
     path: '/example',
     component: Layout,
@@ -77,6 +96,7 @@ export const constantRoutes = [
     ]
   },
 
+  // 表单
   {
     path: '/form',
     component: Layout,
@@ -90,6 +110,7 @@ export const constantRoutes = [
     ]
   },
 
+  // 嵌入菜单
   {
     path: '/nested',
     component: Layout,
@@ -149,6 +170,7 @@ export const constantRoutes = [
     ]
   },
 
+  // 外部链接
   {
     path: 'external-link',
     component: Layout,
