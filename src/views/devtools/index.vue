@@ -37,14 +37,12 @@ export default {
             return '';
         },
         fileList() {
-            return fileInfoApi.fileList()
+            this.tableData = fileInfoApi.fileList()
         }
     },
     data() {
         return {
-            tableData: (() => {
-                fileInfoApi.fileList
-            })
+            tableData
         }
     }
 }
